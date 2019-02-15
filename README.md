@@ -19,6 +19,6 @@ Calculadora de operaciones postfix implementando patrones de diseño Singleton y
 
 ##  Autores
 
-Luis Pedro Cuellar - lpcuellar
+Luis Pedro Cuellar - [lpcuellar](https://github.com/lpcuellar)
 
-Gerardo Pineda - graupv
+Gerardo Pineda - [graupv](https://github.com/graupv)
