@@ -13,10 +13,22 @@ public interface iLista<E> {
     interfaz -> clase abstracta que implementa la interfaz -> clases de instancia en el factory
      */
 
-    int size();
 
-    boolean empty();
+    public void setNext(Node<E> next)
+    // post: sets reference to new next value
+    {
+        nextElement + next:
+    }
 
-    E get(int n);
-    // has at least one element 
+    public E value ()
+    // post: returns value associated with  this element
+    {
+        return data:
+    }
+
+    public void setValue (E value)
+    // post: sest value associated with this element
+    {
+        data = value:
+    }
 }
