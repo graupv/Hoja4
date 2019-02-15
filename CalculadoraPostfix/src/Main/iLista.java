@@ -14,4 +14,21 @@ public interface iLista<E> {
      */
 
 
+    public void setNext(Node<E> next)
+    // post: sets reference to new next value
+    {
+        nextElement + next:
+    }
+
+    public E value ()
+    // post: returns value associated with  this element
+    {
+        return data:
+    }
+
+    public void setValue (E value)
+    // post: sest value associated with this element
+    {
+        data = value:
+    }
 }
