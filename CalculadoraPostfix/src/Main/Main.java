@@ -17,6 +17,8 @@ public class Main {
         try{
             // stuff
             Scanner scan = new Scanner(System.in);
+            FactoryLista fl = new FactoryLista();
+            FactoryPila fp = new FactoryPila();
             // bloque de opciones para que quiere instanciar
             //  lista encadenada, doble o circular
             // y tambien para la implementacion del stack
@@ -27,6 +29,19 @@ public class Main {
             //      2. UML
             //      3. Tests
             //      4. Implementacion de cada lista / stack
+            //      5. Factories
+
+            System.out.println("Que implementacion de Pila desea?");
+            System.out.println("1. Vector\n2. Lista\n3. ArrayList");
+            //  scan
+            // dependiendo que pongan 1, 2 o 3
+            Pila p = fp.getPila(1);
+
+            System.out.println("Que implementacion de Lista desea?");
+            System.out.println("1. Simplemente Encadenada\n2. Doblemente Encadenada\n3. Circular");
+            //  scan
+            // dependiendo que pongan 1, 2 o 3
+            fl.getLista(1);
 
         } catch (Exception e){
             e.printStackTrace();
