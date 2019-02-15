@@ -13,5 +13,5 @@ public interface iLista<E> {
     interfaz -> clase abstracta que implementa la interfaz -> clases de instancia en el factory
      */
 
-    
+
 }

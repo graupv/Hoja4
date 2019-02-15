@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 import java.util.Scanner;
 
 public class Main {
-
+    // Tomando como referencia HDT 2
     final static String PATH_DATOS = "C:\\datos.txt";
     //identificador de los delimitadores para eliminarse en la informacion
     final static String DELIMITADOR = " \t\n\r\fABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz|°!\"#$%&()=?¡¿'\\´¨[]{}_-:.;,^`¬~";
@@ -19,7 +19,14 @@ public class Main {
             Scanner scan = new Scanner(System.in);
             // bloque de opciones para que quiere instanciar
             //  lista encadenada, doble o circular
-            // y tambien
+            // y tambien para la implementacion del stack
+
+            //  Un switch creo que seria lo mas facil
+            //  TODO
+            //      1. Switch
+            //      2. UML
+            //      3. Tests
+            //      4. Implementacion de cada lista / stack
 
         } catch (Exception e){
             e.printStackTrace();
