@@ -1,6 +1,6 @@
 package Main;
 
-public interface iLista {
+public interface iLista<E> {
     /*
     Construir la interfaz de la Lista, su clase abstracta
     y las clases de implementación con:
@@ -12,4 +12,6 @@ public interface iLista {
     A mi me da a entender que el orden debe ser
     interfaz -> clase abstracta que implementa la interfaz -> clases de instancia en el factory
      */
+
+    
 }
