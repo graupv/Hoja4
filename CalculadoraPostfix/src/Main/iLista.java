@@ -13,5 +13,10 @@ public interface iLista<E> {
     interfaz -> clase abstracta que implementa la interfaz -> clases de instancia en el factory
      */
 
+    int size();
 
+    boolean empty();
+
+    E get(int n);
+    // has at least one element 
 }
