@@ -32,9 +32,40 @@ public class Main {
             //      5. Factories
 
             System.out.println("Que implementacion de Pila desea?");
-            System.out.println("1. Vector\n2. Lista\n3. ArrayList");
+            System.out.println("1. Vector\n2. Lista\n3. ArrayList\n4. Salir");
             //  scan
             // dependiendo que pongan 1, 2 o 3
+            int opcion;
+            opcion = scan.nextInt();
+
+            switch (opcion) {
+                case 1: // se implementa la Pila Vector
+                        break;
+
+                case 2: System.out.println(" Que implementacion de lista desea emplpear?");
+                        System.out,println("1. Simplemente encadenada\n2. Doblemente encadenada\n3. Circular"):
+                        int lista = scan.nextInt():
+                        // Dependiendo de la lista que se escoga esa su usara.
+                        switch (lista) {
+                            case 1: // Usar la lista Simplemente Encadenada
+                                    break;
+
+                            case 2: // Usar la lista Doblemete Encadenada
+                                    break:
+
+                            case 3: // Usar la lista Circular
+                                    break;
+                        }
+
+                        break;
+
+                case 3: // Usar Arraylists
+                        break;
+
+                case 4: // Hacer mensaje de despediad para el usuario.
+                        break;
+            }
+
             Pila p = fp.getPila(1);
 
             System.out.println("Que implementacion de Lista desea?");
