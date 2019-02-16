@@ -10,6 +10,8 @@ public abstract class Lista<E> implements iLista<E>{
 
 class ListaSimple<E> extends Lista<E> {
 
+
+
     @Override
     public int size() {
         return 0;
