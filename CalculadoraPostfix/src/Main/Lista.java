@@ -1,8 +1,8 @@
-package Main;
+//package Main;
 
-public abstract class Lista<E> implements iLista<E>{
+public abstract class Lista<E> implements iLista<E> {
 
-    @Override
+    //@Override
     public boolean empty() {
         return size() == 0;
     }
@@ -10,14 +10,12 @@ public abstract class Lista<E> implements iLista<E>{
 
 class ListaSimple<E> extends Lista<E> {
 
-
-
-    @Override
+    //@Override
     public int size() {
         return 0;
     }
 
-    @Override
+   // @Override
     public E get(int n) {
         return null;
     }
@@ -25,10 +23,18 @@ class ListaSimple<E> extends Lista<E> {
     * Contiene nodo siguiente
     * */
 
+    public Node<E> next() {
+        return nextElement;
+    }
+
 }
 
 class ListaDoble<E> extends Lista<E> {
+
     /* Contiene nodo siguiente y anterior */
+    public Node<E> next() {
+        return nextElement;
+    }
 }
 
 class ListaCirc<E> extends Lista<E> {

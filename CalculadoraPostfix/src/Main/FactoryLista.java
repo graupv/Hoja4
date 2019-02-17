@@ -6,15 +6,20 @@ public class FactoryLista {
 
     public Lista getLista(int n){
         if (n == 1){
-            Lista l = new ListaSimple();
+            Lista<E> list = new ListaSimple<E>();
             return l;
 
-        } else if (n == 2){
-            Lista l = new ListaDoble();
+        }
+
+        else if (n == 2){
+            Lista<E> list = new ListaDoble<E>();
             return l;
-        } else {
-            Lista l = new ListaCirc();
+        }
+
+        else {
+            Lista<E> list = new ListaCirc<E>();
             return l;
         }
     }
 }
+
