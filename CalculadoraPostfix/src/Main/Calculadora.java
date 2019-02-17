@@ -3,7 +3,7 @@ package Main;
 public class Calculadora implements iCalculadora{
     /*
     Singleton de la calculadora, solo es instanciado una vez.
-    Por lo tanto es estatica.
+
      */
     private static Calculadora ourInstance = new Calculadora();
 
