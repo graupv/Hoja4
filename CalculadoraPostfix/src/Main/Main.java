@@ -5,8 +5,10 @@ import java.util.StringTokenizer;
 import java.util.Scanner;
 
 public class Main {
+
     // Tomando como referencia HDT 2
     final static String PATH_DATOS = "C:\\datos.txt";
+
     //identificador de los delimitadores para eliminarse en la informacion
     final static String DELIMITADOR = " \t\n\r\fABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz|°!\"#$%&()=?¡¿'\\´¨[]{}_-:.;,^`¬~";
 
@@ -14,11 +16,14 @@ public class Main {
 
         StringTokenizer token = new StringTokenizer(getDataFile(), DELIMITADOR);
         // del tokenizer extraeremos los numeros y simbolos a operar
+
         try{
-            // stuff
+
+            // Instanciar clases
             Scanner scan = new Scanner(System.in);
             FactoryLista fl = new FactoryLista();
             FactoryPila fp = new FactoryPila();
+
             // bloque de opciones para que quiere instanciar
             //  lista encadenada, doble o circular
             // y tambien para la implementacion del stack
@@ -39,40 +44,52 @@ public class Main {
             opcion = scan.nextInt();
 
             switch (opcion) {
-                case 1: // se implementa la Pila Vector
+                case 1: // Se implementa la Pila con Vectores
+                        fp.getPila(3);
+
                         break;
 
-                case 2: System.out.println(" Que implementacion de lista desea emplpear?");
-                        System.out,println("1. Simplemente encadenada\n2. Doblemente encadenada\n3. Circular"):
-                        int lista = scan.nextInt():
+                case 2: // Se implementa la Pila con Listas
+
+                        System.out.println(" Que implementacion de lista desea emplear?");
+                        System.out.println("1. Simplemente encadenada\n2. Doblemente encadenada\n3. Circular");
+                        int lista = scan.nextInt();
+
                         // Dependiendo de la lista que se escoga esa su usara.
                         switch (lista) {
                             case 1: // Usar la lista Simplemente Encadenada
+    |                               fl.getLista(1);
+
                                     break;
 
                             case 2: // Usar la lista Doblemete Encadenada
-                                    break:
+                                    fl.getLista(2);
+
+                                    break;
 
                             case 3: // Usar la lista Circular
+                                    fl.getLista(3);
+
                                     break;
                         }
 
                         break;
 
-                case 3: // Usar Arraylists
+                case 3: // Se implementa la Pila con ArrayLists
+                        fp.getPila(2);
                         break;
 
                 case 4: // Hacer mensaje de despediad para el usuario.
                         break;
             }
 
-            Pila p = fp.getPila(1);
+            /*Pila p = fp.getPila(1);
 
             System.out.println("Que implementacion de Lista desea?");
             System.out.println("1. Simplemente Encadenada\n2. Doblemente Encadenada\n3. Circular");
             //  scan
             // dependiendo que pongan 1, 2 o 3
-            fl.getLista(1);
+            fl.getLista(1); */
 
         } catch (Exception e){
             e.printStackTrace();

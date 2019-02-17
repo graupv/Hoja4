@@ -23,10 +23,17 @@ class ListaSimple<E> extends Lista<E> {
     * Contiene nodo siguiente
     * */
 
+    public Node<E> next() {
+        return nextElement;
+    }
+
 }
 
 class ListaDoble<E> extends Lista<E> {
     /* Contiene nodo siguiente y anterior */
+    public Node<E> next() {
+        return nextElement;
+    }
 }
 
 class ListaCirc<E> extends Lista<E> {
