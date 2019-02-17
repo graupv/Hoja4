@@ -11,49 +11,7 @@ public abstract class Pila<E> implements iPila<E>{
 
 }
 
-class PilaLista<E> extends Pila<E>{
 
-    protected ArrayList<E> data;
-
-    @Override
-    public void push(E item) {
-        data.add(item);
-    }
-
-    @Override
-    public String pop() {
-        return data.remove(0);
-    }
-
-    @Override
-    public String peek() {
-        return data.get(0);
-    }
-
-    @Override
-    public boolean empty() {
-        return false;
-    }
-
-    @Override
-    public int size() {
-        return data.size();
-    }
-
-    public java.lang.String. toString(){
-        java.lang.String resultado = " ";
-        for (String i: data) {
-            resultado = resultado + i;
-        }
-
-        return resultado;
-    }
-
-    @Override
-    public boolean empty() {
-        return (data.size() == 0);
-    }
-}
 
 class PilaVec <E> extends Pila<E> {
 
@@ -65,33 +23,21 @@ class PilaVec <E> extends Pila<E> {
     }
 
     @Override
-    public String pop() {
+    public E pop() {
         return data.remove(0);
     }
 
     @Override
-    public String peek() {
+    public E peek() {
         return data.get(0);
     }
 
-    @Override
-    public boolean empty() {
-        return false;
-    }
 
     @Override
     public int size() {
         return data.size();
     }
 
-    public java.lang.String. toString(){
-        java.lang.String resultado = " ";
-        for (String i: data) {
-            resultado = resultado + i;
-        }
-
-        return resultado;
-    }
 
     public boolean empty() {
         return (data.size() == 0);
@@ -99,7 +45,7 @@ class PilaVec <E> extends Pila<E> {
 //    Vector<E>
 }
 
-class PilaArr<E> extends Pila<E>{
+class PilaArr<E> extends Pila<E> {
 
     protected ArrayList<E> data;
 
@@ -109,32 +55,18 @@ class PilaArr<E> extends Pila<E>{
     }
 
     @Override
-    public String pop() {
+    public E pop() {
         return data.remove(0);
     }
 
     @Override
-    public String peek() {
+    public E peek() {
         return data.get(0);
-    }
-
-    @Override
-    public boolean empty() {
-        return false;
     }
 
     @Override
     public int size() {
         return data.size();
-    }
-
-    public java.lang.String. toString(){
-        java.lang.String resultado = " ";
-        for (String i: data) {
-            resultado = resultado + i;
-        }
-
-        return resultado;
     }
 
     public boolean empty() {

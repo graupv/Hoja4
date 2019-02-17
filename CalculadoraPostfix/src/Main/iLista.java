@@ -4,7 +4,7 @@ public interface iLista<E> {
 
     E get(int i);
 
-    E pop();
+
 
     boolean empty();
 
@@ -18,7 +18,7 @@ public interface iLista<E> {
     E getFirst(E obj);
     // non empty list
 
-    boolean size();
+    int size();
 
 
 }

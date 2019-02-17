@@ -1,4 +1,4 @@
-//package Main;
+package Main;
 
 import java.io.*;
 import java.util.StringTokenizer;
@@ -12,29 +12,18 @@ public class Main {
     //identificador de los delimitadores para eliminarse en la informacion
     final static String DELIMITADOR = " \t\n\r\fABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz|°!\"#$%&()=?¡¿'\\´¨[]{}_-:.;,^`¬~";
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
 
         StringTokenizer token = new StringTokenizer(getDataFile(), DELIMITADOR);
         // del tokenizer extraeremos los numeros y simbolos a operar
 
-        try{
-
-            // Instanciar clases
+        try {
             Scanner scan = new Scanner(System.in);
             FactoryLista fl = new FactoryLista();
             FactoryPila fp = new FactoryPila();
+            iCalculadora calc = Calculadora.getInstance();
+            //  llamar instancia de singleton
 
-            // bloque de opciones para que quiere instanciar
-            //  lista encadenada, doble o circular
-            // y tambien para la implementacion del stack
-
-            //  Un switch creo que seria lo mas facil
-            //  TODO
-            //      1. Switch
-            //      2. UML
-            //      3. Tests
-            //      4. Implementacion de cada lista / stack
-            //      5. Factories
 
             System.out.println("\nQue implementacion de Pila desea?");
             System.out.println("1. Vector\n2. Lista\n3. ArrayList\n ");
@@ -42,12 +31,14 @@ public class Main {
             // dependiendo que pongan 1, 2 o 3
             int opcion;
             opcion = scan.nextInt();
-            Pila<Integer>  miPila = null;
+            Pila<Integer> miPila = null;
+            iPila mP;
+            iLista iL;
 
             switch (opcion) {
                 case 1:
                     // Se implementa la Pila con Vectores
-                    miPila =  fp.getPila(3);
+                    mP = fp.getPila(3);
                     break;
 
                 case 2:
@@ -61,7 +52,7 @@ public class Main {
                     switch (lista) {
                         case 1:
                             // Usar la lista Simplemente Encadenada
-                            miLiata = fl.getLista(1);
+                            miLista = fl.getLista(1);
                             break;
 
                         case 2:
@@ -77,21 +68,12 @@ public class Main {
                         default:
                             System.out.println("Opcion Invalida!");
                             break;
-
-                        try {
-                            // Aqui hay que hacer para que lea el archivo y pueda escribir en él
-                            // este luego se copia en el try-catch que está fuera el switch principal
-                            // literal es lo mismo, solo es copiar y pegar.
-                        }
-
-                        catch(Exception e){
-                            System.out.println("El archivo .txt no fue encontrado :( ")
-                        }
                     }
+
 
                 case 3:
                     // Se implementa la Pila con ArrayLists
-                    miPila = fp.getPila(2);
+                    mP = fp.getPila(1);
                     break;
 
                 default:
@@ -99,25 +81,113 @@ public class Main {
                     break;
             }
 
-            /*Pila p = fp.getPila(1);
+            /*
+            luego de escoger e instanciar el stack correcto
+            usarlo.
+             */
+            double res;
+            while (token.hasMoreTokens()) {
 
-            System.out.println("Que implementacion de Lista desea?");
-            System.out.println("1. Simplemente Encadenada\n2. Doblemente Encadenada\n3. Circular");
-            //  scan
-            // dependiendo que pongan 1, 2 o 3
-            fl.getLista(1); */
 
-        } catch (Exception e){
+                for (char c : token.nextToken().toCharArray()) {
+                /*
+                Iteramos el String devuelto luego de convertirlo a arreglo de Char
+
+                */
+                    if (c == '+' || c == '-' || c == '/' || c == '*') {
+                        // si esto se cumple es un operador entonces usamos la calculadora
+                        //  tambien verificamos si hay suficientes operandos
+
+
+                        if (mP.size() < 2) {
+                            continue;
+                            //  no hay suficientas operandos, sigamos buscando operandos
+                            // y se tomara el siguiente operador para la operacion
+
+                        } else {
+                            switch (c) {
+                                case '+':
+                                    while (!mP.empty()) {
+                                        if (mP.size() == 1) {
+                                            //  es el ultimo valor
+                                            break;
+
+                                        } else {
+                                            res = calc.sumar((double) mP.pop(), (double) mP.pop());
+                                            mP.push(res);
+                                            break; //
+                                        }
+
+                                    }
+
+
+                                    break;
+
+                                case '-':
+                                    while (!mP.empty()) {
+                                        if (mP.size() == 1) {
+                                            //  es el ultimo valor
+                                            break;
+
+                                        } else {
+                                            res = calc.restar((double) mP.pop(), (double) mP.pop());
+                                            mP.push(res);
+                                            break;
+                                        }
+
+                                    }
+
+                                    break;
+
+                                case '*':
+                                    while (!mP.empty()) {
+                                        if (mP.size() == 1) {
+                                            //  es el ultimo valor
+                                            break;
+
+                                        } else {
+                                            res = calc.multiplicar((double) mP.pop(), (double) mP.pop());
+                                            mP.push(res);
+                                            break;
+                                        }
+
+                                    }
+
+
+                                    break;
+
+                                case '/':
+                                    while (!mP.empty()) {
+                                        if (mP.size() == 1) {
+                                            //  es el ultimo valor
+                                            break;
+
+                                        } else {
+                                            res = calc.dividir((double) mP.pop(), (double) mP.pop());
+                                            mP.push(res);
+                                            break;
+                                        }
+
+                                    }
+
+                                    break;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     static String getDataFile() throws IOException, FileNotFoundException{
 
         BufferedReader reader;
         File file;
-        String linea.datos = "";
+        String linea,datos = "";
         try{
             if((new File(PATH_DATOS)).exists()){ //verificamos que el archivo exista
 

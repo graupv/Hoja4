@@ -1,22 +1,16 @@
 package Main;
 
-public class FactoryPila {
+public class FactoryPila<E> {
 
     public Pila getPila(int n){
-        if (n == 1){
-            Pila<E> stack = new PilaLista<E>();
-            return l;
-
-        }
-
-        else if (n == 2){
+         if (n == 1){
             Pila<E> stack = new PilaArr<E>();
-            return l;
+            return stack;
         }
 
         else {
             Pila<E> stack = new PilaVec<E>();
-            return l;
+            return stack;
         }
     }
 }
