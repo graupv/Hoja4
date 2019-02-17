@@ -36,51 +36,67 @@ public class Main {
             //      4. Implementacion de cada lista / stack
             //      5. Factories
 
-            System.out.println("Que implementacion de Pila desea?");
-            System.out.println("1. Vector\n2. Lista\n3. ArrayList\n4. Salir");
-            //  scan
+            System.out.println("\nQue implementacion de Pila desea?");
+            System.out.println("1. Vector\n2. Lista\n3. ArrayList\n ");
+            // scan
             // dependiendo que pongan 1, 2 o 3
             int opcion;
             opcion = scan.nextInt();
+            Pila<Integer>  miPila = null;
 
             switch (opcion) {
-                case 1: // Se implementa la Pila con Vectores
-                        fp.getPila(3);
+                case 1:
+                    // Se implementa la Pila con Vectores
+                    miPila =  fp.getPila(3);
+                    break;
 
-                        break;
+                case 2:
+                    // Se implementa la Pila con Listas
+                    System.out.println(" Que implementacion de lista desea emplear?");
+                    System.out.println("1. Simplemente encadenada\n2. Doblemente encadenada\n3. Circular");
+                    int lista = scan.nextInt();
+                    Lista<Integer> miLista;
 
-                case 2: // Se implementa la Pila con Listas
+                    // Dependiendo de la lista que se escoga esa su usara.
+                    switch (lista) {
+                        case 1:
+                            // Usar la lista Simplemente Encadenada
+                            miLiata = fl.getLista(1);
+                            break;
 
-                        System.out.println(" Que implementacion de lista desea emplear?");
-                        System.out.println("1. Simplemente encadenada\n2. Doblemente encadenada\n3. Circular");
-                        int lista = scan.nextInt();
+                        case 2:
+                            // Usar la lista Doblemete Encadenada
+                            miLista = fl.getLista(2);
+                            break;
 
-                        // Dependiendo de la lista que se escoga esa su usara.
-                        switch (lista) {
-                            case 1: // Usar la lista Simplemente Encadenada
-    |                               fl.getLista(1);
+                        case 3:
+                            // Usar la lista Circular
+                            miLista = fl.getLista(3);
+                            break;
 
-                                    break;
+                        default:
+                            System.out.println("Opcion Invalida!");
+                            break;
 
-                            case 2: // Usar la lista Doblemete Encadenada
-                                    fl.getLista(2);
-
-                                    break;
-
-                            case 3: // Usar la lista Circular
-                                    fl.getLista(3);
-
-                                    break;
+                        try {
+                            // Aqui hay que hacer para que lea el archivo y pueda escribir en él
+                            // este luego se copia en el try-catch que está fuera el switch principal
+                            // literal es lo mismo, solo es copiar y pegar.
                         }
 
-                        break;
+                        catch(Exception e){
+                            System.out.println("El archivo .txt no fue encontrado :( ")
+                        }
+                    }
 
-                case 3: // Se implementa la Pila con ArrayLists
-                        fp.getPila(2);
-                        break;
+                case 3:
+                    // Se implementa la Pila con ArrayLists
+                    miPila = fp.getPila(2);
+                    break;
 
-                case 4: // Hacer mensaje de despediad para el usuario.
-                        break;
+                default:
+                    System.out.println("Opcion Invalida!");
+                    break;
             }
 
             /*Pila p = fp.getPila(1);
@@ -101,7 +117,7 @@ public class Main {
 
         BufferedReader reader;
         File file;
-        String linea,datos = "";
+        String linea.datos = "";
         try{
             if((new File(PATH_DATOS)).exists()){ //verificamos que el archivo exista
 
