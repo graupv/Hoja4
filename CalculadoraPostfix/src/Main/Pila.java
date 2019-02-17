@@ -13,7 +13,7 @@ public abstract class Pila<E> implements iPila<E>{
 
 class PilaLista<E> extends Pila<E>{
 
-    protected ArrayList<E> = data;
+    protected ArrayList<E> data;
 
     @Override
     public void push(E item) {
@@ -49,6 +49,7 @@ class PilaLista<E> extends Pila<E>{
         return resultado;
     }
 
+    @Override
     public boolean empty() {
         return (data.size() == 0);
     }
@@ -56,7 +57,7 @@ class PilaLista<E> extends Pila<E>{
 
 class PilaVec <E> extends Pila<E> {
 
-    protected Vector<E> = data;
+    protected Vector<E> data;
 
     @Override
     public void push(E item) {
@@ -100,7 +101,7 @@ class PilaVec <E> extends Pila<E> {
 
 class PilaArr<E> extends Pila<E>{
 
-    protected ArrayList<E> = data;
+    protected ArrayList<E> data;
 
     @Override
     public void push(E item) {
