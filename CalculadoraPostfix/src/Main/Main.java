@@ -19,9 +19,7 @@ public class Main {
             Scanner scan = new Scanner(System.in);
             FactoryLista fl = new FactoryLista();
             FactoryPila fp = new FactoryPila();
-            // bloque de opciones para que quiere instanciar
-            //  lista encadenada, doble o circular
-            // y tambien para la implementacion del stack
+
 
             //  Un switch creo que seria lo mas facil
             //  TODO
@@ -43,15 +41,15 @@ public class Main {
                         break;
 
                 case 2: System.out.println(" Que implementacion de lista desea emplpear?");
-                        System.out,println("1. Simplemente encadenada\n2. Doblemente encadenada\n3. Circular"):
-                        int lista = scan.nextInt():
+                        System.out.println("1. Simplemente encadenada\n2. Doblemente encadenada\n3. Circular");
+                        int lista = scan.nextInt();
                         // Dependiendo de la lista que se escoga esa su usara.
                         switch (lista) {
                             case 1: // Usar la lista Simplemente Encadenada
                                     break;
 
                             case 2: // Usar la lista Doblemete Encadenada
-                                    break:
+                                    break;
 
                             case 3: // Usar la lista Circular
                                     break;
